@@ -3,7 +3,7 @@
 ARTIFACT = server
 
 build:
-	@go build -o $(ARTIFACT)
+	@go build -tags "nomsgpack go_json" -o $(ARTIFACT)
 
 run: build
 run:
