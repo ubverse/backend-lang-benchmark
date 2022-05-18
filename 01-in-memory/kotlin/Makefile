@@ -1,7 +1,7 @@
 .DEFAULT_GOAL := run
 
 tag = latest
-ARTIFACT = server
+ARTIFACT = build/libs/inmemory-0.0.1-SNAPSHOT.jar
 
 HERE  = $(shell pwd)
 LANG  = $(shell basename $(HERE))
@@ -9,17 +9,13 @@ GROUP = $(shell basename $(shell dirname $(HERE)))
 ZIP   = ./$(GROUP)-$(LANG)-sample-$(tag).zip
 
 
-install:
-	@go get
-
 build:
-	@go build -tags "nomsgpack go_json" -o $(ARTIFACT)
+	@gradle bootJar
 
 run: build
 run:
-	./$(ARTIFACT)
+	@java -jar $(ARTIFACT)
 
-package: install
 package: build
 package:
-	@zip -r $(ZIP) $(ARTIFACT)
+	@zip -j $(ZIP) $(ARTIFACT)

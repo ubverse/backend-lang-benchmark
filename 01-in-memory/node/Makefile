@@ -1,7 +1,7 @@
 .DEFAULT_GOAL := run
 
 tag = latest
-ARTIFACT = server
+ARTIFACT = node_modules Makefile index.js accumulator.js
 
 HERE  = $(shell pwd)
 LANG  = $(shell basename $(HERE))
@@ -10,16 +10,12 @@ ZIP   = ./$(GROUP)-$(LANG)-sample-$(tag).zip
 
 
 install:
-	@go get
+	@npm install
 
-build:
-	@go build -tags "nomsgpack go_json" -o $(ARTIFACT)
-
-run: build
+run: install
 run:
-	./$(ARTIFACT)
+	@npm start
 
 package: install
-package: build
 package:
 	@zip -r $(ZIP) $(ARTIFACT)
