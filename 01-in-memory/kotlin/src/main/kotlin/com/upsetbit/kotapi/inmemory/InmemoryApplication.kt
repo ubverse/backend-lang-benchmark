@@ -6,6 +6,7 @@ import org.springframework.boot.runApplication
 @SpringBootApplication
 class InmemoryApplication
 
-fun main(args: Array<String>) {
+fun main(args: Array<String>)
+{
 	runApplication<InmemoryApplication>(*args)
 }
