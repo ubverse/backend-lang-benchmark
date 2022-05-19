@@ -5,9 +5,9 @@ public class AccumulatorStatus
     public int acc { get; }
     public int hits { get; }
 
-    public AccumulatorStatus(int acc, int hits)
+    public AccumulatorStatus(int a, int h)
     {
-        this.acc = acc;
-        this.hits = hits;
+        acc = a;
+        hits = h;
     }
 }

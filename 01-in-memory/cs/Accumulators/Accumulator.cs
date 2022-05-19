@@ -8,8 +8,8 @@ public sealed class Accumulator
 
     private Accumulator()
     {
-        this.acc = 0;
-        this.hits = 0;
+        acc = 0;
+        hits = 0;
     }
 
     public static Accumulator GetInstance()
@@ -22,22 +22,22 @@ public sealed class Accumulator
 
     private void alter(int val)
     {
-        this.hits++;
-        this.acc += val;
+        hits++;
+        acc += val;
     }
 
     public void Inc(int val)
     {
-        this.alter(val);
+        alter(val);
     }
 
     public void Dec(int val)
     {
-        this.alter(0 - val);
+        alter(0 - val);
     }
 
     public AccumulatorStatus Get()
     {
-        return new AccumulatorStatus(this.acc, this.hits);
+        return new AccumulatorStatus(acc, hits);
     }
 }
