@@ -13,7 +13,7 @@ import com.upsetbit.kotapi.inmemory.accumulator.AccumulatorStatus
 class InMemoryController
 {
     @GetMapping("/status")
-    fun getAccumulatorStatus() = accumulator.get()
+    fun getAccumulatorStatus(): AccumulatorStatus = accumulator.get()
 
     @PostMapping("/increment")
     fun incrementAccumulator(@RequestParam value: Int) = accumulator.inc(value)
