@@ -8,5 +8,5 @@ class InmemoryApplication
 
 fun main(args: Array<String>)
 {
-	runApplication<InmemoryApplication>(*args)
+    runApplication<InmemoryApplication>(*args)
 }
