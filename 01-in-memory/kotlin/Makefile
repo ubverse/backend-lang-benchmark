@@ -9,6 +9,7 @@ GROUP = $(shell basename $(shell dirname $(HERE)))
 ZIP   = ./$(GROUP)-$(LANG)-sample-$(tag).zip
 
 
+.PHONY: build
 build:
 	@gradle bootJar
 
