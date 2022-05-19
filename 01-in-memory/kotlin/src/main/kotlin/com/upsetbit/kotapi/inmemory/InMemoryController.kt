@@ -10,7 +10,7 @@ import com.upsetbit.kotapi.inmemory.accumulator.accumulator
 import com.upsetbit.kotapi.inmemory.accumulator.AccumulatorStatus
 
 @RestController
-class InmemoryController
+class InMemoryController
 {
     @GetMapping("/status")
     fun getAccumulatorStatus() = accumulator.get()

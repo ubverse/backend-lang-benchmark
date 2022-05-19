@@ -4,9 +4,9 @@ import org.springframework.boot.autoconfigure.SpringBootApplication
 import org.springframework.boot.runApplication
 
 @SpringBootApplication
-class InmemoryApplication
+class InMemoryApplication
 
 fun main(args: Array<String>)
 {
-    runApplication<InmemoryApplication>(*args)
+    runApplication<InMemoryApplication>(*args)
 }
